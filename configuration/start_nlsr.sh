@@ -1,6 +1,8 @@
 #!/bin/bash
 
 NAME=$1
+# remove any old restart log so we cn see how much it restarts each time.
+rm ./NLSR_OUTPUT/$NAME.restart.log
 while true
 do
   echo "starting nlsr >$NAME<"
