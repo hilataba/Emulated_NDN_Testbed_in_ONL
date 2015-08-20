@@ -1,16 +1,14 @@
 #!/bin/bash
 
-PREFIX=$1
+DEFAULT="/ndn"
 
-# start nfd on all machines
-#./startNfd.sh
+if [$1 -eq ""]
+then
+  PREFIX=$DEFAULT
+else
+  PREFIX=$1
+fi
 
-# start nlsr on all routers
-#./startNlsr.sh
-
-# configure nfd
-#echo "configuring routers and hosts"
-#./configAll.sh $PREFIX
 
 # run data collection clients and server
 ./startDataCollectionScripts.sh $PREFIX
