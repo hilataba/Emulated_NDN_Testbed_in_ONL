@@ -61,8 +61,5 @@ do
   ssh ${!HOST} "mkdir -p /tmp/log/ndn/nlsr; mkdir -p /tmp/lib/ndn/nlsr"
   #ssh ${!HOST} "cd $CWD ; nohup nlsr -f ./NLSR_CONF/$NAME.conf > ./NLSR_OUTPUT/$NAME.OUTPUT 2>&1 &"
   ssh ${!HOST} "cd $CWD ; nohup ./start_nlsr.sh $NAME > ./NLSR_OUTPUT/$NAME.start_nlsr.out 2>&1 &"
-  #sleep 10
-  #ssh ${!HOST} "ps auxwww | grep  nlsr ; ps auxwww | grep nfd"
-  #sleep 10
 
 done
