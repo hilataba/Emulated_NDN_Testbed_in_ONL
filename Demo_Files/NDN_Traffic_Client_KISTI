@@ -1,0 +1,4 @@
+TrafficPercentage=100
+Name=/ndn/kr/re/kisti/host
+MustBeFresh=1
+NameAppendSequenceNumber=1
