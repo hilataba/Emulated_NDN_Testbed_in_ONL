@@ -16,6 +16,7 @@
 #include <ndn-cxx/util/network-monitor.hpp>
 #include <sys/wait.h>
 #include <time.h>
+#include <sstream>
 
 #define APP_SUFFIX "/ndnmap/stats"
 #define SCRIPT_SUFFIX "/script"
@@ -35,7 +36,7 @@ public:
   , m_scheduler(m_io)
   , m_terminationSignalSet(m_io)
   {
-    m_mapServerAddr = "128.252.153.27";
+    m_mapServerAddr = "192.168.29.1";
     m_pollPeriod = 1;
     m_timeoutPeriod = 500;
     
@@ -97,7 +98,51 @@ public:
     ndn::Name cmpName(linkPrefix+SCRIPT_SUFFIX);
     if (cmpName.isPrefixOf(interest.getName()) )
     {
-      decodeScriptReply(data);
+      // decodeScriptReply(data);
+			ScriptReply reply;
+			reply.wireDecode(data.getContent().blockFromValue());
+
+			std::string buffer;
+			int interestNameSize = data.getName().size();
+			//buffer = data.getName().toUri();
+			buffer += reply.getData();
+
+			if (LOCAL)
+				storeLocally(buffer);	
+			else 
+			{
+				std::cout << "Link prefix = " << linkPrefix << std::endl;
+				std::cout << buffer << std::endl;
+			}
+
+			std::string cmdStr("http://");
+			cmdStr += m_mapServerAddr;
+			cmdStr += "/ipPing"; //todo: get the script name from the interest
+			cmdStr += buffer;
+
+			cmdStr.erase(std::remove(cmdStr.begin(), cmdStr.end(), '\n'), cmdStr.end());
+
+			// std::cout << "cmd to pass to curl: " << cmdStr << std::endl;
+			// printf("cmd c string = %s\n", cmdStr.c_str());
+
+			int status;
+			// check for zombies
+      waitpid(-1, &status, WNOHANG);
+      int pid;
+      if ((pid = fork()) < 0)
+        printf("for failed for curl %s\n", cmdStr.c_str());
+      else
+      {	
+				// std::cout << "pid = " << pid << std::endl;
+        if (pid == 0) {
+					// std::cout << "before request sent\n";
+          execl("/usr/bin/curl", "curl", "-s", "-L", cmdStr.c_str(), NULL);
+					//execl("/usr/bin/curl", "curl", "-s", "-L", "http://192.168.29.1/abcd", NULL);
+				}
+      }
+      // check for zombies again
+      waitpid(-1, &status, WNOHANG);	
+					
     }
     else // data is a CollectorData reply 
     {  
@@ -154,6 +199,7 @@ public:
               LinkId = (*pair).linkId;
             }
           }
+
         }
         reply.m_statusList.clear();
       } 
@@ -327,10 +373,12 @@ public:
       usage();
     }
 
-    while (!script_file.eof()) 
+    while (getline(script_file, script_line)) 
     {
-      getline(script_file, script_line); 
+      // getline(script_file, script_line); 
       m_scriptsList.push_back(script_line);
+			std::cout << "script list pusch back" << script_line << std::endl;
+	
     }
   }
   
@@ -448,7 +496,7 @@ main(int argc, char* argv[])
   std::fstream file;
   int num_lines = 0;
   ndnmapServer.setSingleScript(0);
-std::cout << "Single script flag at start: " << ndnmapServer.getFlag() << std::endl;
+	std::cout << "Single script flag at start: " << ndnmapServer.getFlag() << std::endl;
    
   // Parse cmd-line arguments
   while ((option = getopt(argc, argv, "hn:f:s:t:r:d:lk:i:y:x")) != -1)
@@ -502,7 +550,7 @@ std::cout << "Single script flag at start: " << ndnmapServer.getFlag() << std::e
     }
   }
 
-std::cout << "FLAG: " << ndnmapServer.getFlag() << std::endl;
+	std::cout << "FLAG: " << ndnmapServer.getFlag() << std::endl;
 
   if (num_lines < 1 && !ndnmapServer.getFlag())
   {
