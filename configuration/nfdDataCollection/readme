@@ -64,7 +64,7 @@ SERVER: nfdstat_s
  ./build/nfdstat_s[-h] -f link_file -n number_of_linkids [-k script_file] [-s map_addr] [-t poll_period] [-r timeout_period] [-d debug_mode] [-l store locally] [-i specify target] [-specify script] [-x suppress collector]
 
  Poll the status of remote clients and/or run custom data collection scripts on nodes.
- 
+
   -h 			- print this message and exit
   -f file_name 		- link_file is name of the file containing pairs associated with linkid.
  			   valid line format: <linkId> <interestPrefix> <LinkIP>
@@ -84,17 +84,22 @@ SERVER: nfdstat_s
 CLIENT: nfdstat_c
  Usage:
  ./build/nfdstat_c[-h] -p interest_filter [-d debug_mode]
- 
+
  Pull local nfd performace and send it as a response to an interest from a remote server, or listen
  and reply to script interests.
 
  	-h - print this message and exit
  	-p - prefix (of this host) to register as the interest's filter
  	-d - sets the debug mode, 1 - debug on, 0 - debug off (default)
- 	-b - set size of buffer for storing data collected, useful for 
- 		  scripts collecting large data sets. Default is 1024 bytes 
+ 	-b - set size of buffer for storing data collected, useful for
+ 		  scripts collecting large data sets. Default is 1024 bytes
 
 ## EXAMPLES
+
+  onlusr>  ./startDataCollectionScripts.sh /ndn
+
+  # scriptslist_2 contains only ipPing.py
+  wu_host> ./build/nfdstat_s -x -f linksList.testbed -n 66 -k scriptslist_2
 
 ## ICN DEMO
 
