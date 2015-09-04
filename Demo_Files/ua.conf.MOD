@@ -121,7 +121,7 @@ neighbors
        name /ndn/edu/wustl/%C1.Router/wundngw       ; name prefix of the neighbor router consists
                                             ; of network, site-extension and router-extension
        face-uri  udp4://192.168.28.1                 ; face id of the face connected to the neighbor
-       link-cost 8                         ; cost of the connecting link to neighbor
+       link-cost 4                         ; cost of the connecting link to neighbor
    }
 
    neighbor  ; sitename
