@@ -44,7 +44,7 @@
 <!-- BYU      CSU        8 -->
 <!-- BYU      REMAP      9 -->
 <!-- BYU      UA        30 -->
-<!-- ANYANG   WASEDA    22 -->
+<!-- ANYANG   WASEDA    64 -->
 <!-- ANYANG   TONGJI    54 -->
 <!-- ANYANG   BUPT      33 -->
 <!-- ANYANG   PKU       38 -->
@@ -61,6 +61,6 @@
 <!-- VERISIGN WU        15 -->
 <!-- VERISIGN MICH      16 -->
 <!-- KISTI    ANYANG    16 -->
-<!-- KISTI    WASEDA    16 -->
+<!-- KISTI    WASEDA    64 -->
 <!-- KISTI    BUPT      16 -->
 <!-- CSU      KISTI     89 -->
