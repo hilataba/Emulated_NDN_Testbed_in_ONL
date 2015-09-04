@@ -31,7 +31,7 @@ neighbor_string = """
 def read_network_config():
     # the file is formatted to be easy for bash to use,
     # so the python parsing is not as basic as it could be
-    print("read_network_config()")
+    #print("read_network_config()")
     router_file = open("../routers.with_costs", "r")
 
     for line in router_file:
@@ -52,15 +52,15 @@ def read_network_config():
             # then we can build a neighbors array and a costs array.
             neighbors = [x for idx, x in enumerate(router_info) if ((idx > 4) and (idx % 2))]
             costs = [x for idx, x in enumerate(router_info) if ((idx > 4) and not (idx % 2))]
-            print ("costs")
-            print (costs)
-            print ("end costs")
+            #print ("costs")
+            #print (costs)
+            #print ("end costs")
             router_object['neighbors'] = neighbors
             router_object['costs'] = costs
 
             # insert info in to routers array
             routers.append(router_object)
-    print("read_network_config() end")
+    #print("read_network_config() end")
 
 def get_object_with_value(neighbor):
     for x in routers:
@@ -102,7 +102,7 @@ def process(keyword, router):
 
 def write_files():
     for router in routers:
-        output = open(router['sitename']+'with_cost.conf', "w")
+        output = open(router['sitename']+'.conf', "w")
         template = open("../template.conf", "r")
 
         for line in template:
@@ -119,7 +119,7 @@ def write_files():
                 print(line, file=output,)
 
 def main():
-    print("main()")
+    #print("main()")
     # Fills in 'routers' array based on information from 'routers' file in pwd 
     read_network_config()
     # create and write to .conf files
