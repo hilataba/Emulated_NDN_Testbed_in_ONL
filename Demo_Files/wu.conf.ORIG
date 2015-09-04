@@ -113,7 +113,7 @@ neighbors
        name /ndn/edu/arizona/%C1.Router/hobo       ; name prefix of the neighbor router consists
                                             ; of network, site-extension and router-extension
        face-uri  udp4://192.168.3.1                 ; face id of the face connected to the neighbor
-       link-cost 1                         ; cost of the connecting link to neighbor
+       link-cost 33                         ; cost of the connecting link to neighbor
    }
 
    neighbor  ; sitename
@@ -121,7 +121,7 @@ neighbors
        name /ndn/edu/memphis/%C1.Router/titan       ; name prefix of the neighbor router consists
                                             ; of network, site-extension and router-extension
        face-uri  udp4://192.168.21.1                 ; face id of the face connected to the neighbor
-       link-cost 2                         ; cost of the connecting link to neighbor
+       link-cost 17                         ; cost of the connecting link to neighbor
    }
 
    neighbor  ; sitename
@@ -129,7 +129,7 @@ neighbors
        name /ndn/edu/illinois/%C1.Router/ndnx       ; name prefix of the neighbor router consists
                                             ; of network, site-extension and router-extension
        face-uri  udp4://192.168.30.1                 ; face id of the face connected to the neighbor
-       link-cost 2                         ; cost of the connecting link to neighbor
+       link-cost 9                         ; cost of the connecting link to neighbor
    }
 
    neighbor  ; sitename
@@ -137,7 +137,7 @@ neighbors
        name /ndn/NLSR/LSA/com/verisign/%C1.Router/labs-ndn3       ; name prefix of the neighbor router consists
                                             ; of network, site-extension and router-extension
        face-uri  udp4://192.168.23.2                 ; face id of the face connected to the neighbor
-       link-cost 2                         ; cost of the connecting link to neighbor
+       link-cost 15                         ; cost of the connecting link to neighbor
    }
 
    neighbor  ; sitename
@@ -145,7 +145,7 @@ neighbors
        name /ndn/es/urjc/%C1.Router/insula       ; name prefix of the neighbor router consists
                                             ; of network, site-extension and router-extension
        face-uri  udp4://192.168.44.1                 ; face id of the face connected to the neighbor
-       link-cost 2                         ; cost of the connecting link to neighbor
+       link-cost 86                         ; cost of the connecting link to neighbor
    }
 
 

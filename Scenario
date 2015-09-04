@@ -10,10 +10,10 @@ in an onlusr window:
 
 Once that is done:
 cd Emulated_NDN_Testbed_in_ONL/Demo_Files
-./populateVMs.sh
+./populateVMs.sh <vm password>
 
-./runTrafficServer.sh &
-./runTrafficClient.sh &
+./runTrafficServer.sh <vm password> &
+./runTrafficClient.sh <vm password> &
 
 Check monitoring windows to make sure you see adequate traffic.
 
