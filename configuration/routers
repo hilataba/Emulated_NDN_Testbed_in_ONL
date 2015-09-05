@@ -32,7 +32,7 @@ ROUTER_CONFIG=( "csu:edu/colostate:mccoy:h15x2:192.168.15.2:ua:remap:ucla:byu:ui
                 "ntnu:no/ntnu:ndnnode:h51x2:192.168.51.2:lip6:systemx:basel:neu:pku"
                 "systemx:fr/irt-systemx:systemx-ndn-1:h57x1:192.168.57.1:orange:lip6:ntnu:basel"
                 "basel:ch/unibas:cs-ndn-testbed1:h55x2:192.168.55.2:padua:urjc:orange:lip6:systemx:ntnu:pku"
-                "orange:fr/orange:orange-ndn-1:h53x2:192.168.53.2:urjc:padua:basel:systemx:lip6:um:waseda"
+                "orange:com/orange:orange-ndn-1:h53x2:192.168.53.2:urjc:padua:basel:systemx:lip6:um:waseda"
                 "padua:it/unipd:ndnnode:h47x1:192.168.47.1:urjc:orange:basel:uiuc"
                 "urjc:es/urjc:insula:h44x1:192.168.44.1:lip6:orange:basel:padua:wu"
 
