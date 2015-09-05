@@ -119,10 +119,10 @@
 119 /ndn/no/ntnu 192.168.57.1
 120 /ndn/no/ntnu 192.168.55.2
 121 /ndn/no/ntnu 192.168.43.2
-122 /ndn/fr/systemx 192.168.49.1
-123 /ndn/fr/systemx 192.168.51.2
-124 /ndn/fr/systemx 192.168.55.2
-125 /ndn/fr/systemx 192.168.53.2
+122 /ndn/fr/irt-systemx 192.168.49.1
+123 /ndn/fr/irt-systemx 192.168.51.2
+124 /ndn/fr/irt-systemx 192.168.55.2
+125 /ndn/fr/irt-systemx 192.168.53.2
 126 /ndn/ch/unibas 192.168.51.2
 127 /ndn/ch/unibas 192.168.57.1
 128 /ndn/ch/unibas 192.168.49.1
