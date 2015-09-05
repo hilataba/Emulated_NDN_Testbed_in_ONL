@@ -25,14 +25,14 @@ ROUTER_CONFIG=( "csu:edu/colostate:mccoy:h15x2:192.168.15.2:ua:remap:ucla:byu:ui
                 "uiuc:edu/illinois:ndnx:h30x1:192.168.30.1:wu:csu:mich:padua"
                 "mich:edu/umich:ndn0:h27x1:192.168.27.1:verisign:um:uiuc:csu:neu:pku:lip6"
                 "neu:edu/neu:ndnrtr:h25x2:192.168.25.2:um:mich:ntnu"
-                "verisign:NLSR/LSA/com/verisign:labs-ndn3:h23x2:192.168.23.2:um:wu:mich"
+                "verisign:com/verisign:labs-ndn3:h23x2:192.168.23.2:um:wu:mich"
                 "um:edu/memphis:titan:h21x1:192.168.21.1:ua:wu:mich:neu:verisign:orange"
 
                 "lip6:fr/lip6:ndnhub:h49x1:192.168.49.1:urjc:systemx:orange:basel:ntnu:mich"
                 "ntnu:no/ntnu:ndnnode:h51x2:192.168.51.2:lip6:systemx:basel:neu:pku"
                 "systemx:fr/irt-systemx:systemx-ndn-1:h57x1:192.168.57.1:orange:lip6:ntnu:basel"
                 "basel:ch/unibas:cs-ndn-testbed1:h55x2:192.168.55.2:padua:urjc:orange:lip6:systemx:ntnu:pku"
-                "orange:fr/orange1:orange-ndn-1:h53x2:192.168.53.2:urjc:padua:basel:systemx:lip6:um:waseda"
+                "orange:fr/orange:orange-ndn-1:h53x2:192.168.53.2:urjc:padua:basel:systemx:lip6:um:waseda"
                 "padua:it/unipd:ndnnode:h47x1:192.168.47.1:urjc:orange:basel:uiuc"
                 "urjc:es/urjc:insula:h44x1:192.168.44.1:lip6:orange:basel:padua:wu"
 
