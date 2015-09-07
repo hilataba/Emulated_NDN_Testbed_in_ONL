@@ -23,8 +23,8 @@ ROUTER_CONFIG=( "csu:edu/colostate:mccoy:h15x2:192.168.15.2:ua:remap:ucla:byu:ui
                     
                 "wu:edu/wustl:wundngw:h28x1:192.168.28.1:ua:um:uiuc:verisign:urjc"
                 "uiuc:edu/illinois:ndnx:h30x1:192.168.30.1:wu:csu:mich:padua"
-                "mich:edu/umich:ndn0:h27x1:192.168.27.1:verisign:um:uiuc:csu:neu:pku:lip6"
-                "neu:edu/neu:ndnrtr:h25x2:192.168.25.2:um:mich:ntnu"
+                "mich:edu/umich:ndn0:h27x1:192.168.27.1:verisign:um:uiuc:csu:neu:lip6"
+                "neu:edu/neu:ndnrtr:h25x2:192.168.25.2:um:mich:ntnu:pku"
                 "verisign:com/verisign:labs-ndn3:h23x2:192.168.23.2:um:wu:mich"
                 "um:edu/memphis:titan:h21x1:192.168.21.1:ua:wu:mich:neu:verisign:orange"
 
@@ -41,4 +41,4 @@ ROUTER_CONFIG=( "csu:edu/colostate:mccoy:h15x2:192.168.15.2:ua:remap:ucla:byu:ui
                 "kisti:kr/re/kisti:router3:h36x1:192.168.36.1:bupt:anyang:waseda:csu"
                 "anyang:kr/anyang:anyanghub:h38x1:192.168.38.1:pku:bupt:tongji:kisti:waseda"
                 "bupt:cn/edu/bupt:bupthub:h42x2:192.168.42.2:pku:tongji:anyang:kisti:waseda"
-                "pku:cn/edu/pku:pkuhub:h43x2:192.168.43.2:bupt:tongji:ucla:mich:anyang:ntnu:basel")
+                "pku:cn/edu/pku:pkuhub:h43x2:192.168.43.2:bupt:tongji:ucla:neu:anyang:ntnu:basel")
