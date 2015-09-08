@@ -19,9 +19,10 @@ result = ""
 
 for destination in n:
   cmd = "ping -c 1 -n -q " + destination
+  #cmd = "ping -i 0.2 -c 5 -n -q " + destination
   proc = subprocess.Popen(cmd, stdout=subprocess.PIPE, shell=True)
   (out, err) = proc.communicate()
   out = out.split("/")
-  result += site + "-" + destination + "+" + out[-2] + "&"
+  result += site + ":" + destination + "+" + out[-2] + "&"
 
 print result

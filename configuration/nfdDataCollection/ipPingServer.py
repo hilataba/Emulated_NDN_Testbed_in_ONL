@@ -3,6 +3,8 @@
 import time
 import BaseHTTPServer
 
+import process_topology as topo
+
 import os
 import time
 import sys
@@ -27,21 +29,34 @@ def populate_id_rtt_table():
   for line in f:
     line = line.rstrip()
     comps = line.split(" ")
-    key = comps[1] + "-" + comps[2]
+    key = topo.site_prefix2site[comps[1]] + " --> " + topo.ip_prefix2site[comps[2]]
     link_id = comps[0]
     key_id[key] = link_id
     id_key[int(link_id)] = key
     id_rtt.append(0)
 
 def dump_rtt():
+  processed = dict()
   for link_id in range(1, len(id_rtt)):
-    one_line = []
-    one_line.append(str(link_id))
-    one_line.append(id_key[link_id])
-    one_line.append(str(id_rtt[link_id]))
-    print one_line
-    #table_data.append(one_line)
-    #table = AsciiTable(table_data)
+    key = id_key[link_id]
+    if key not in processed:
+      one_line = []
+      one_line.append("{:<3}".format(str(link_id)))
+      one_line.append("{:<20}".format(id_key[link_id].upper()))
+      one_line.append("{:<10}".format(str(id_rtt[link_id])))
+			
+      r_key = key.split(" --> ")[1] + " --> " + key.split(" --> ")[0]
+      r_id = int(key_id[r_key])
+      one_line.append("{:<3}".format(str(r_id)))
+      one_line.append("{:<20}".format(id_key[r_id].upper()))
+      one_line.append("{:<10}".format(str(id_rtt[r_id])))
+
+      processed[key] = 1
+      processed[r_key] = 1
+
+      print one_line
+      #table_data.append(one_line)
+      #table = AsciiTable(table_data)
   #print table.table
 
 def dump_rtt_html():
@@ -72,6 +87,14 @@ class MyHandler(BaseHTTPServer.BaseHTTPRequestHandler):
         if key[0] != '/':
           key = "/" + key
         rtt = comp.split("+")[1]
+
+        key_0 = key.split(":")[0]
+        key_1 = key.split(":")[1]
+
+        key_0 = topo.site_prefix2site[key_0]
+        key_1 = topo.ip_prefix2site[key_1]
+
+        key = key_0 + " --> " + key_1
         link_id = key_id[key]
         id_rtt[int(link_id)] = rtt
 
