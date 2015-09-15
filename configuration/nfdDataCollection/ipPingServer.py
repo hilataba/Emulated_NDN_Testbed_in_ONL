@@ -54,6 +54,9 @@ def dump_rtt():
       processed[key] = 1
       processed[r_key] = 1
 
+      id_rtt[link_id] = 0
+      id_rtt[r_id] = 0
+
       print one_line
       #table_data.append(one_line)
       #table = AsciiTable(table_data)
