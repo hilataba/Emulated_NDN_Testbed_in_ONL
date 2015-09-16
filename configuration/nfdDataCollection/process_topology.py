@@ -1,14 +1,16 @@
 #!/usr/bin/python
 
-# Used for the ipPing.py script
+# Used by the ipPing.py and ndnPing.py scripts
 # The my_neighbors dictionary is keyed by the name prefixes
 # For ech key, the list of neighboring IP addresses are stored
 
 import sys
 import os
 
-#my_neighbors = dict()
+# 1: ONL; 0: NDN TESTBED
+RUN_IN_ONL = 1
 
+#my_neighbors = dict()
 site_neighbors = dict()
 
 site2site_prefix = dict()
@@ -20,7 +22,10 @@ site_prefix2ip_prefix = dict()
 ip_prefix2site = dict()
 ip_prefix2site_prefix = dict()
 
-f = open('../routers', 'r')
+if RUN_IN_ONL == 1:
+  f = open('../routers', 'r')
+else:
+  f = open('../routers.testbed', 'r')
 
 # urjc:es/urjc:insula:h44x1:192.168.44.1:lip6:orange:basel:padua:wu
 for line in f:
@@ -53,7 +58,6 @@ for line in f:
         empty_list = []
         site_neighbors[site] = empty_list
         site_neighbors[site].append(comps[i])
-
 
 #print site_neighbors
 #print site2site_prefix

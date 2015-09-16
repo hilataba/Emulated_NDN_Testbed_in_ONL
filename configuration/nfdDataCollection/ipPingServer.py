@@ -2,14 +2,18 @@
 
 import time
 import BaseHTTPServer
-
-import process_topology as topo
-
 import os
 import time
 import sys
 #import html
 #from terminaltables import AsciiTable
+import process_topology as topo
+
+links_file_name = ""
+if topo.RUN_IN_ONL == 1:
+  links_file_name = 'linksList'
+else:
+  links_file_name = 'linksList.testbed'
 
 # Each
 HOST_NAME = '192.168.21.1' # !!!REMEMBER TO CHANGE THIS!!!
@@ -25,7 +29,7 @@ update = 0
 last_update = 0
 
 def populate_id_rtt_table():
-  f = open('linksList', 'r')
+  f = open(links_file_name, 'r')
   for line in f:
     line = line.rstrip()
     comps = line.split(" ")
@@ -44,7 +48,7 @@ def dump_rtt():
       one_line.append("{:<3}".format(str(link_id)))
       one_line.append("{:<20}".format(id_key[link_id].upper()))
       one_line.append("{:<10}".format(str(id_rtt[link_id])))
-			
+
       r_key = key.split(" --> ")[1] + " --> " + key.split(" --> ")[0]
       r_id = int(key_id[r_key])
       one_line.append("{:<3}".format(str(r_id)))
