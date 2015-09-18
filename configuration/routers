@@ -1,5 +1,5 @@
 # if you use quotes in this file, setup_conf.py will most likely break
-#  because it parses the file looking for quotes. It is this way so 
+#  because it parses the file looking for quotes. It is this way so
 #  that this file can be sourced by bash scripts and used to generate
 #  configuration files. Also, you could improve the python to make this
 #  not an issue if it bothers you
@@ -14,13 +14,13 @@
 # :[{neighbor site name abbreviation}: for each neighbor]
 
 ROUTER_CONFIG=( "csu:edu/colostate:mccoy:h15x2:192.168.15.2:ua:remap:ucla:byu:uiuc:mich:kisti"
-				"byu:edu/byu:pastal0:h13x1:192.168.13.1:remap:ua:csu"
-				"ucla:edu/ucla:cs/spurs:h11x1:192.168.11.1:caida:uci:remap:csu:pku"
-				"remap:edu/ucla/remap:cs/aleph:h9x1:192.168.9.1:uci:ucla:ua:byu:csu"
-				"uci:edu/uci:ndnhub:h7x1:192.168.7.1:caida:ucla:remap"
-				"caida:org/caida:click:h5x1:192.168.5.1:ua:uci:ucla:tongji"                    
-				"ua:edu/arizona:hobo:h3x1:192.168.3.1:um:wu:csu:byu:remap:caida:waseda"
-                    
+                "byu:edu/byu:pastal0:h13x1:192.168.13.1:remap:ua:csu"
+                "ucla:edu/ucla:cs/spurs:h11x1:192.168.11.1:caida:uci:remap:csu:pku"
+                "remap:edu/ucla/remap:cs/aleph:h9x1:192.168.9.1:uci:ucla:ua:byu:csu"
+                "uci:edu/uci:ndnhub:h7x1:192.168.7.1:caida:ucla:remap"
+                "caida:org/caida:click:h5x1:192.168.5.1:ua:uci:ucla:tongji"
+                "ua:edu/arizona:hobo:h3x1:192.168.3.1:um:wu:csu:byu:remap:caida:waseda"
+
                 "wu:edu/wustl:wundngw:h28x1:192.168.28.1:ua:um:uiuc:verisign:urjc"
                 "uiuc:edu/illinois:ndnx:h30x1:192.168.30.1:wu:csu:mich:padua"
                 "mich:edu/umich:ndn0:h27x1:192.168.27.1:verisign:um:uiuc:csu:neu:lip6"
