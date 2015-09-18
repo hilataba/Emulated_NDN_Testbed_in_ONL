@@ -6,21 +6,23 @@ import os
 import time
 import sys
 #import html
-from terminaltables import AsciiTable
+#from terminaltables import AsciiTable
 import process_topology as topo
 
 PATH="./"
 
-HOST_NAME = '127.0.0.1' # !!!REMEMBER TO CHANGE THIS!!!
-PORT_NUMBER = 80
+# Each
+HOST_NAME = '128.252.153.28' # !!!REMEMBER TO CHANGE THIS!!!
+PORT_NUMBER = 8080
 
 links_file_name = PATH
 if topo.RUN_IN_ONL == 1:
-  links_file_name = 'linksList'
+  links_file_name = '../linksList'
 else:
-  links_file_name = 'linksList.testbed'
+  links_file_name = '../linksList.testbed'
 
-#key format: /name/prefix-192.168.1.1 (neighbor IP address)
+
+#key format: /name/prefix-192.168.1.1 (neighboring IP address)
 key_id = dict()
 id_key = dict()
 id_rtt = dict()          # IP RTT
@@ -30,13 +32,13 @@ id_ndn_rtt = dict()   # NDN RTT
 table_data = [["Link ID", "Link", "NLSR", "IP RTT (ms)", "NDN RTT"]]
 
 update = 0
+last_update = 0
 
 def populate_id_rtt_table():
   f = open(links_file_name, 'r')
   for line in f:
     line = line.rstrip()
     comps = line.split(" ")
-
     key = topo.site_prefix2site[comps[1]] + " --> " + topo.ip_prefix2site[comps[2]]
     link_id = comps[0]
 
@@ -48,7 +50,7 @@ def populate_id_rtt_table():
     id_nlsr[int(link_id)] = 0
 
 def populate_id_nlsr():
-  f = open('../routers.with_costs', 'r')
+  f = open('./routers.with_costs', 'r')
 
   #"lip6:fr/lip6:ndnhub:h49x1:192.168.49.1:urjc:15:systemx:2:orange:3:basel:18:ntnu:25:mich:69"
   for line in f:
@@ -72,9 +74,10 @@ def populate_id_nlsr():
 
 def dump_rtt():
   processed = dict()
+  #for link_id in range(1, len(id_rtt)):
   for link_id in id_rtt:
     key = id_key[link_id]
-    if (key not in processed):
+    if key not in processed:
       one_line = []
       one_line.append("{:<3}".format(str(link_id)))
       one_line.append("{:<20}".format(id_key[link_id].upper()))
@@ -84,21 +87,18 @@ def dump_rtt():
       processed[key] = 1
       id_rtt[link_id] = 0
 
-      """
-      # process the reverse links
-      r_key = key.split(" --> ")[1] + " --> " + key.split(" --> ")[0]
-      r_id = int(key_id[r_key])
-      one_line.append("{:<3}".format(str(r_id)))
-      one_line.append("{:<20}".format(id_key[r_id].upper()))
-      one_line.append("{:<10}".format(str(id_rtt[r_id])))
-      processed[r_key] = 1
-      id_rtt[r_id] = 0
-      """
+      #r_key = key.split(" --> ")[1] + " --> " + key.split(" --> ")[0]
+      #r_id = int(key_id[r_key])
+      #one_line.append("{:<3}".format(str(r_id)))
+      #one_line.append("{:<20}".format(id_key[r_id].upper()))
+      #one_line.append("{:<10}".format(str(id_rtt[r_id])))
+      #processed[r_key] = 1
+      #id_rtt[r_id] = 0
 
-  #     print one_line
-  #     table_data.append(one_line)
-  #     table = AsciiTable(table_data)
-  # print table.table
+      print one_line
+      #table_data.append(one_line)
+      #table = AsciiTable(table_data)
+  #print table.table
 
 header = """ <!DOCTYPE html>
 <html lang="en">
@@ -159,14 +159,13 @@ def dump_rtt_html():
   return table_code
 
 class MyHandler(BaseHTTPServer.BaseHTTPRequestHandler):
-  global update
   def do_HEAD(s):
     s.send_response(200)
     s.send_header("Content-type", "text/html")
     s.end_headers()
-
   def do_GET(s):
     """Respond to a GET request."""
+
     if "/ipPing/" in s.path:
       msg = s.path.split("/ipPing/")[1]
       comps = msg.split("&")
@@ -186,15 +185,18 @@ class MyHandler(BaseHTTPServer.BaseHTTPRequestHandler):
 
         key = key_0 + " --> " + key_1
         link_id = key_id[key]
+        #print "link_id: ", link_id, " key: ", key
         id_rtt[int(link_id)] = rtt
 
+      global update
       update = update + 1
-      if update > 100:
+      if update > 200:
+      #if update > 10:
         os.system('clear')
         dump_rtt()
         update = 0
 
-    if "/ndnPing/" in s.path:
+    if "/ndnPing" in s.path:
       msg = s.path.split("/ndnPing/")[1]
       comps = msg.split("&")
       comps.pop(-1) # remove the last element
@@ -221,7 +223,7 @@ class MyHandler(BaseHTTPServer.BaseHTTPRequestHandler):
           dump_rtt()
           update = 0
 
-    if "/get_ip_rtt.html" == s.path:
+    if "/get_ip_rtt.html" in s.path:
       s.send_response(200)
       s.send_header("Content-type", "text/html")
       s.end_headers()
@@ -233,8 +235,6 @@ class MyHandler(BaseHTTPServer.BaseHTTPRequestHandler):
 if __name__ == '__main__':
 
   populate_id_rtt_table()
-  populate_id_nlsr()
-  dump_rtt()
 
   server_class = BaseHTTPServer.HTTPServer
   httpd = server_class((HOST_NAME, PORT_NUMBER), MyHandler)
@@ -245,4 +245,3 @@ if __name__ == '__main__':
     pass
   httpd.server_close()
   print time.asctime(), "Server Stops - %s:%s" % (HOST_NAME, PORT_NUMBER)
-
