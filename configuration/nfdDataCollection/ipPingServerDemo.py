@@ -9,18 +9,18 @@ import sys
 #from terminaltables import AsciiTable
 import process_topology as topo
 
-PATH="./"
+Enable_NDN_RTT = 0 # Print NDN RTT if set to true
 
 # Each
 HOST_NAME = '128.252.153.28' # !!!REMEMBER TO CHANGE THIS!!!
 PORT_NUMBER = 8080
 
+PATH="../"
 links_file_name = PATH
 if topo.RUN_IN_ONL == 1:
-  links_file_name = '../linksList'
+  links_file_name += 'linksList' # ./ ---> ../linksList
 else:
-  links_file_name = '../linksList.testbed'
-
+  links_file_name += 'linksList.testbed' # ./ ---> ../linksList.testbed
 
 #key format: /name/prefix-192.168.1.1 (neighboring IP address)
 key_id = dict()
@@ -29,7 +29,10 @@ id_rtt = dict()          # IP RTT
 id_nlsr = dict()      # NLSR configuration values
 id_ndn_rtt = dict()   # NDN RTT
 
-table_data = [["Link ID", "Link", "NLSR", "IP RTT (ms)", "NDN RTT"]]
+if Enable_NDN_RTT == 1:
+  table_data = [["Link ID", "Link", "NLSR", "IP RTT (ms)", "NDN RTT"]]
+else:
+  table_data = [["Link ID", "Link", "NLSR", "IP RTT (ms)"]]
 
 update = 0
 last_update = 0
@@ -83,7 +86,8 @@ def dump_rtt():
       one_line.append("{:<20}".format(id_key[link_id].upper()))
       one_line.append("{:<10}".format(str(id_nlsr[link_id])))
       one_line.append("{:<10}".format(str(id_rtt[link_id])))
-      one_line.append("{:<10}".format(str(id_ndn_rtt[link_id])))
+      if Enable_NDN_RTT == 1:
+        one_line.append("{:<10}".format(str(id_ndn_rtt[link_id])))
       processed[key] = 1
       id_rtt[link_id] = 0
 
@@ -100,44 +104,85 @@ def dump_rtt():
       #table = AsciiTable(table_data)
   #print table.table
 
-header = """ <!DOCTYPE html>
-<html lang="en">
-<head>
-  <title> NDN Testbed RTT </title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-  <link rel="stylesheet" href="http://cdn.datatables.net/1.10.9/css/jquery.dataTables.min.css">
-  <script src="http://cdn.datatables.net/1.10.9/js/jquery.dataTables.min.js"></script>
-  <script type="text/javascript"
-  src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-</head>
-<body>
+header=""
+if Enable_NDN_RTT == 1:
+  header = """ <!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <title> NDN Testbed RTT </title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="http://cdn.datatables.net/1.10.9/css/jquery.dataTables.min.css">
+    <script src="http://cdn.datatables.net/1.10.9/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript"
+    src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  </head>
+  <body>
 
-<script>
-$(document).ready(function(){
-    $('#myTable').DataTable();
-});
-</script>
+  <script>
+  $(document).ready(function(){
+      $('#myTable').DataTable();
+  });
+  </script>
 
-<br></br>
-<h3 align=center>NDN Testbed RTT Collection</h3>
-<p></p>
+  <br></br>
+  <h3 align=center>NDN Testbed RTT Collection</h3>
+  <p></p>
 
-<div class="table-responsive">
-  <table id="myTable" class="display">
-    <thead>
-      <tr>
-        <th class="col-sm-1">Link ID</th>
-        <th class="col-sm-1">Link</th>
-        <th class="col-sm-1">NLSR</th>
-        <th class="col-sm-1">IP RTT</th>
-        <th class="col-sm-2">NDN RTT</th>
-      </tr>
-    </thead>
-"""
+  <div class="table-responsive">
+    <table id="myTable" class="display">
+      <thead>
+        <tr>
+          <th class="col-sm-1">Link ID</th>
+          <th class="col-sm-1">Link</th>
+          <th class="col-sm-1">NLSR</th>
+          <th class="col-sm-1">IP RTT</th>
+          <th class="col-sm-2">NDN RTT</th>
+        </tr>
+      </thead>
+  """
+else:
+  header = """ <!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <title> NDN Testbed RTT </title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="http://cdn.datatables.net/1.10.9/css/jquery.dataTables.min.css">
+    <script src="http://cdn.datatables.net/1.10.9/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript"
+    src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  </head>
+  <body>
+
+  <script>
+  $(document).ready(function(){
+      $('#myTable').DataTable();
+  });
+  </script>
+
+  <br></br>
+  <h3 align=center>NDN Testbed RTT Collection</h3>
+  <p></p>
+
+  <div class="table-responsive">
+    <table id="myTable" class="display">
+      <thead>
+        <tr>
+          <th class="col-sm-1">Link ID</th>
+          <th class="col-sm-1">Link</th>
+          <th class="col-sm-1">NLSR</th>
+          <th class="col-sm-1">IP RTT</th>
+        </tr>
+      </thead>
+  """
+
 
 tailer = """ </table>
 </div>
@@ -152,7 +197,8 @@ def dump_rtt_html():
     table_code += '<td>'+id_key[link_id]+'</td>'
     table_code += '<td>'+str(id_nlsr[link_id])+'</td>'
     table_code += '<td>'+str(id_rtt[link_id])+'</td>'+"\n"
-    table_code += '<td>'+str(id_ndn_rtt[link_id])+'</td>'+"\n"
+    if Enable_NDN_RTT == 1:
+      table_code += '<td>'+str(id_ndn_rtt[link_id])+'</td>'+"\n"
     table_code += '</tr>\n'
   table_code += '</tbody>\n'
 
@@ -235,6 +281,7 @@ class MyHandler(BaseHTTPServer.BaseHTTPRequestHandler):
 if __name__ == '__main__':
 
   populate_id_rtt_table()
+  populate_id_nlsr()
 
   server_class = BaseHTTPServer.HTTPServer
   httpd = server_class((HOST_NAME, PORT_NUMBER), MyHandler)
