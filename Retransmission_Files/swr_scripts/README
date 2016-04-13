@@ -1,0 +1,17 @@
+In add_filter.sh, there are 2 similar sets of configuration the first one involves port12 and the second involves port14.
+After you have committed your experiment, do the following:
+
+1) on the SWR machine, run the command
+    grep "configure_port.sh 12" /tmp/swrd.log
+    
+    you will see something like 
+	Wed Apr 13 09:47:15 tid(2848823040) Router::configure_port system(/usr/local/bin/swrd_configure_port.sh 12 dataX Y 192.168.28.2 255.255.255.0 1000000 1000 21)
+
+    in the add_filter.sh file in the first command that looks like this
+    	tc filter add dev dataA.B parent 13:0 protocol ip prio 2 handle 60 fw flowid 13:57
+    replace dataA.B with dataX.Y
+
+
+2) do the same for the second tc command in the file except use the values from the command 
+	grep "configure_port.sh 14" /tmp/swrd.log
+
