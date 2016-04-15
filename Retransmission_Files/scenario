@@ -1,1 +1,20 @@
 Retransmission experiments directory
+
+# exp1 - monitor ndn-traffic during a link failure
+=============
+drop all packets between WU-->UIUC and measure pkt count on WU-->UIUC and WU-->UM to monitor ndn traffic :
+	WU-->UIUC  28x1-->30x1
+	WU-->UM    28x1-->21x1
+
+scenario: 
+cd ../configuration
+./runAll.sh (start nfd and nlsr on all routers)
+
+cd ../Demo_Files
+./populateVMs.sh (copies traffic conf files to Vms)
+
+cd ../Retransmission_Files
+
+ssh $SWR1631 sudo ./add_filter.sh 
+
+./flipLinks.sh <exp_name> (drops and adds the link between WU-->UIUC and measure the pkt coounters to monitor ndn traffic. results are saved under results/raw_data/<exp_name>) 
