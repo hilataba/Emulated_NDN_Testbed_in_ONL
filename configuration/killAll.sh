@@ -22,7 +22,7 @@ do
   # array_contains defined in helperFunctions
   if ! array_contains $killed_nfd $ROUTER
   then
-    ssh ${!ROUTER} "killall nfd ; killall start_nlsr.sh; killall nlsr"
+    ssh ${!ROUTER} "killall start_nfd.sh ; killall nfd ; killall start_nlsr.sh; killall nlsr"
     killed_nfd+=("$ROUTER")
   fi
   sshpass -e ssh -t ${!HOST} "killall nfd" 

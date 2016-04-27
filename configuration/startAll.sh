@@ -23,8 +23,9 @@ do
   # array_contains defined in helperFunctions
   if ! array_contains $started_nfd $ROUTER
   then
+    echo "starting nfd on $ROUTER"
     # start nfd on ROUTER
-    ssh ${!ROUTER} "cd $CWD ; ./start_nfd.sh ./NFD_OUTPUT/$ROUTER.OUTPUT"
+    ssh ${!ROUTER} "cd $CWD ; sudo /sbin/ldconfig /users/hilata/nfd/usr/local/lib/;  ./start_nfd.sh ./NFD_OUTPUT/$ROUTER.OUTPUT"
     started_nfd+=("$ROUTER")
   fi
     # move client.conf file, add IP routing table, and start nfd on VMs <-- TODO
@@ -38,10 +39,11 @@ do
       put ./start_nfd.sh
       put nfd.conf
 EOF
+    echo "starting nfd on $HOST"
     # move client.conf file, add IP routing table, and start nfd on VMs <-- TODO
     sshpass -e ssh -t ${!HOST} " mv client.conf .ndn/client.conf ;
        echo $SSHPASS | sudo -S -p '' /sbin/route add -net 192.168.0.0/16 gw $ADDRESS ;
-       ./start_nfd.sh ~/nfd.log" 
+       echo $SSHPASS | sudo sudo -S /sbin/ldconfig /home/hilata/usr/local/lib/ ; ./start_nfd.sh ~/nfd.log" 
 done
 
 

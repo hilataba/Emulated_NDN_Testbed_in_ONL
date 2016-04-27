@@ -50,7 +50,7 @@ echo $clientOut
 # start measurments
 ~/statmon/statmon $uiucIf tx_packets $uiucOut &
 ~/statmon/statmon $umIf tx_packets $umOut & 
-~/statmon/statmon $clientIf rx_packets $clientOut & 
+~/statmon/statmon $clientIf tx_packets $clientOut & 
 
 
 wait 
