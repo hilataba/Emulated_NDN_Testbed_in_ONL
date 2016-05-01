@@ -19,9 +19,10 @@ nfd_ready()
   fi
 }
 
-# run Hila's version
-#export PATH=/users/hilata/nfd/usr/local/bin:$PATH; 
-#sudo /sbin/ldconfig /users/hilata/nfd/usr/local/lib/;
+mkdir -p /tmp/NLSR/.ndn
+cp ~hilata/.ndn/client.conf /tmp/NLSR/.ndn
+HOME=/tmp/NLSR
+
 
 if ! ndnsec-get-default &>/dev/null
 then

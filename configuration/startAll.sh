@@ -26,6 +26,7 @@ do
     echo "starting nfd on $ROUTER"
     # start nfd on ROUTER
     ssh ${!ROUTER} "cd $CWD ; sudo /sbin/ldconfig /users/hilata/nfd/usr/local/lib/;  ./start_nfd.sh ./NFD_OUTPUT/$ROUTER.OUTPUT"
+    #ssh ${!ROUTER} "cd $CWD ; ./start_nfd.sh ./NFD_OUTPUT/$ROUTER.OUTPUT"
     started_nfd+=("$ROUTER")
   fi
     # move client.conf file, add IP routing table, and start nfd on VMs <-- TODO

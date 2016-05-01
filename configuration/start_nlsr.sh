@@ -3,6 +3,10 @@
 NAME=$1
 # remove any old restart log so we cn see how much it restarts each time.
 rm ./NLSR_OUTPUT/$NAME.NLSR.restart.log
+mkdir -p /tmp/NLSR/.ndn
+cp ~hilata/.ndn/client.conf /tmp/NLSR/.ndn
+HOME=/tmp/NLSR
+
 while true
 do
   echo "starting nlsr >$NAME<"
