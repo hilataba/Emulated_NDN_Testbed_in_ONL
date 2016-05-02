@@ -1,0 +1,37 @@
+General NFD status:
+                 nfdId=/localhost/operator/KEY/ksk-1462145998311/ID-CERT
+               version=0.4.0-28-g5a68bbf
+             startTime=20160501T233959.625000
+           currentTime=20160502T021105.699000
+                uptime=9066 seconds
+      nNameTreeEntries=9
+           nFibEntries=3
+           nPitEntries=2
+  nMeasurementsEntries=0
+            nCsEntries=7549
+          nInInterests=7887
+         nOutInterests=7682
+              nInDatas=7549
+             nOutDatas=7684
+Channels:
+  tcp4://0.0.0.0:6363
+  tcp6://[::]:6363
+  udp4://0.0.0.0:6363
+  udp6://[::]:6363
+  unix:///tmp/nfd.sock
+Faces:
+  faceid=1 remote=internal:// local=internal:// counters={in={0i 307d 180288B} out={441i 0d 58575B}} local permanent point-to-point
+  faceid=254 remote=contentstore:// local=contentstore:// counters={in={0i 0d 0B} out={0i 0d 0B}} local permanent point-to-point
+  faceid=255 remote=null:// local=null:// counters={in={0i 0d 0B} out={0i 0d 0B}} local permanent point-to-point
+  faceid=257 remote=fd://22 local=unix:///tmp/nfd.sock counters={in={470i 44d 83813B} out={44i 332d 193307B}} local on-demand point-to-point
+  faceid=259 remote=udp4://192.168.53.2:6363 local=udp4://192.168.52.2:6363 counters={in={7265i 0d 494504B} out={0i 7200d 9956149B}} non-local persistent point-to-point
+  faceid=304 remote=fd://17 local=unix:///tmp/nfd.sock counters={in={3i 0d 173B} out={0i 2d 969B}} local on-demand point-to-point
+FIB:
+  / nexthops={faceid=259 (cost=1)}
+  /localhost/nfd/rib nexthops={faceid=257 (cost=0), faceid=259 (cost=1)}
+  /localhost/nfd nexthops={faceid=1 (cost=0)}
+RIB:
+  /localhost/nfd/rib route={faceid=257 (origin=0 cost=0 ChildInherit)}
+  / route={faceid=259 (origin=255 cost=1 ChildInherit)}
+Strategy choices:
+  / strategy=/localhost/nfd/strategy/best-route/%FD%04
