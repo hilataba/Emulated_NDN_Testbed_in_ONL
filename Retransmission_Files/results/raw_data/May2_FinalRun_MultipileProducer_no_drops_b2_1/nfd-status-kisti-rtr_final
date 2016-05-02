@@ -1,0 +1,208 @@
+General NFD status:
+                 nfdId=/localhost/operator/KEY/ksk-1462156732035/ID-CERT
+               version=0.4.0-38-g13bacf7
+             startTime=20160502T030352.821000
+           currentTime=20160502T043515.786000
+                uptime=5482 seconds
+      nNameTreeEntries=180
+           nFibEntries=84
+           nPitEntries=5
+  nMeasurementsEntries=0
+            nCsEntries=7655
+          nInInterests=21148
+         nOutInterests=17303
+              nInDatas=8095
+             nOutDatas=12124
+Channels:
+  tcp4://0.0.0.0:6363
+  tcp6://[::]:6363
+  udp4://0.0.0.0:6363
+  udp6://[::]:6363
+  unix:///tmp/nfd.sock
+Faces:
+  faceid=1 remote=internal:// local=internal:// counters={in={0i 627d 535478B} out={691i 0d 225026B}} local permanent point-to-point
+  faceid=254 remote=contentstore:// local=contentstore:// counters={in={0i 0d 0B} out={0i 0d 0B}} local permanent point-to-point
+  faceid=255 remote=null:// local=null:// counters={in={0i 0d 0B} out={0i 0d 0B}} local permanent point-to-point
+  faceid=257 remote=fd://16 local=unix:///tmp/nfd.sock counters={in={672i 1736d 1830749B} out={1710i 590d 1223408B}} local on-demand point-to-point
+  faceid=258 remote=udp4://192.168.15.2:6363 local=udp4://192.168.36.1:6363 counters={in={5682i 754d 1222135B} out={2278i 3708d 5352864B}} non-local persistent point-to-point
+  faceid=259 remote=fd://23 local=unix:///tmp/nfd.sock counters={in={4354i 652d 1655902B} out={2238i 3001d 2542362B}} local on-demand point-to-point
+  faceid=260 remote=udp4://192.168.34.1:6363 local=udp4://192.168.36.1:6363 counters={in={2402i 322d 667624B} out={2441i 308d 685697B}} non-local persistent point-to-point
+  faceid=261 remote=udp4://192.168.42.2:6363 local=udp4://192.168.36.1:6363 counters={in={5583i 474d 1014441B} out={2306i 3783d 5326397B}} non-local persistent point-to-point
+  faceid=262 remote=udp4://192.168.38.1:6363 local=udp4://192.168.36.1:6363 counters={in={2328i 288d 651536B} out={2398i 606d 879177B}} non-local persistent point-to-point
+  faceid=264 remote=udp4://192.168.37.1:6363 local=udp4://192.168.36.1:6363 counters={in={0i 3244d 4483433B} out={3244i 0d 220817B}} non-local persistent point-to-point
+  faceid=292 remote=fd://27 local=unix:///tmp/nfd.sock counters={in={3i 0d 173B} out={0i 2d 970B}} local on-demand point-to-point
+FIB:
+  /ndn/org/caida/%C1.Router/click nexthops={faceid=258 (cost=108), faceid=261 (cost=118), faceid=262 (cost=142), faceid=260 (cost=164)}
+  /ndn/NLSR/sync nexthops={faceid=259 (cost=0), faceid=261 (cost=16), faceid=262 (cost=16), faceid=260 (cost=64), faceid=258 (cost=89)}
+  /ndn/cn/edu/bupt/%C1.Router/bupthub nexthops={faceid=261 (cost=16)}
+  /ndn/edu/ucla nexthops={faceid=258 (cost=105), faceid=261 (cost=115), faceid=262 (cost=139), faceid=260 (cost=165)}
+  /ndn/labs-ndn3 nexthops={faceid=258 (cost=120), faceid=261 (cost=162), faceid=260 (cost=174), faceid=262 (cost=186)}
+  /ndn/com/orange1/%C1.Router/orange-ndn-1 nexthops={faceid=261 (cost=163), faceid=258 (cost=172), faceid=262 (cost=187), faceid=260 (cost=208)}
+  /ndn/com/verisign nexthops={faceid=258 (cost=120), faceid=261 (cost=162), faceid=260 (cost=174), faceid=262 (cost=186)}
+  /localhost/nfd/rib nexthops={faceid=257 (cost=0)}
+  /ndn/ndnx nexthops={faceid=258 (cost=103), faceid=261 (cost=145), faceid=262 (cost=169), faceid=260 (cost=171)}
+  /ndn/parklab nexthops={faceid=260 (cost=64), faceid=261 (cost=64), faceid=262 (cost=80), faceid=258 (cost=182)}
+  /ndn/org/caida nexthops={faceid=258 (cost=108), faceid=261 (cost=118), faceid=262 (cost=142), faceid=260 (cost=164)}
+  /ndn/orange-ndn-1 nexthops={faceid=261 (cost=163), faceid=258 (cost=172), faceid=262 (cost=187), faceid=260 (cost=208)}
+  /ndn/edu/colostate nexthops={faceid=258 (cost=89), faceid=261 (cost=131), faceid=262 (cost=155), faceid=260 (cost=157)}
+  /ndn/cnlab nexthops={faceid=261 (cost=34), faceid=262 (cost=67), faceid=260 (cost=130), faceid=258 (cost=201)}
+  /ndn/cs/spurs nexthops={faceid=258 (cost=105), faceid=261 (cost=115), faceid=262 (cost=139), faceid=260 (cost=165)}
+  /ndn/ch/unibas/%C1.Router/cs-ndn-testbed1 nexthops={faceid=261 (cost=157), faceid=262 (cost=181), faceid=258 (cost=184), faceid=260 (cost=220)}
+  /ndn/ndn0 nexthops={faceid=258 (cost=104), faceid=261 (cost=146), faceid=260 (cost=168), faceid=262 (cost=170)}
+  /ndn/edu/colostate/%C1.Router/mccoy nexthops={faceid=258 (cost=89)}
+  /ndn/fr/irt-systemx nexthops={faceid=261 (cost=161), faceid=258 (cost=174), faceid=262 (cost=185), faceid=260 (cost=210)}
+  /ndn/edu/illinois/%C1.Router/ndnx nexthops={faceid=258 (cost=103), faceid=261 (cost=145), faceid=262 (cost=169), faceid=260 (cost=171)}
+  /ndn/edu/memphis nexthops={faceid=258 (cost=116), faceid=260 (cost=156), faceid=261 (cost=156), faceid=262 (cost=172)}
+  /ndn/jp/waseda/%C1.Router/parklab nexthops={faceid=260 (cost=64)}
+  /ndn/edu/wustl/%C1.Router/wundngw nexthops={faceid=258 (cost=112), faceid=261 (cost=154), faceid=260 (cost=172), faceid=262 (cost=178)}
+  /ndn/cs-ndn-testbed1 nexthops={faceid=261 (cost=157), faceid=262 (cost=181), faceid=258 (cost=184), faceid=260 (cost=220)}
+  /ndn/com/orange1 nexthops={faceid=261 (cost=163), faceid=258 (cost=172), faceid=262 (cost=187), faceid=260 (cost=208)}
+  /ndn/ndnnode nexthops={faceid=261 (cost=137), faceid=262 (cost=161), faceid=258 (cost=180), faceid=260 (cost=223)}
+  /ndn/edu/ucla/%C1.Router/cs/spurs nexthops={faceid=258 (cost=105), faceid=261 (cost=115), faceid=262 (cost=139), faceid=260 (cost=165)}
+  /ndn/edu/illinois nexthops={faceid=258 (cost=103), faceid=261 (cost=145), faceid=262 (cost=169), faceid=260 (cost=171)}
+  /ndn/it/unipd/%C1.Router/ndnnode nexthops={faceid=261 (cost=166), faceid=258 (cost=183), faceid=262 (cost=190), faceid=260 (cost=223)}
+  /ndn/fr/lip6 nexthops={faceid=261 (cost=162), faceid=258 (cost=173), faceid=262 (cost=186), faceid=260 (cost=211)}
+  /ndn/es/urjc/%C1.Router/insula nexthops={faceid=261 (cost=166), faceid=258 (cost=187), faceid=262 (cost=190), faceid=260 (cost=223)}
+  /ndn/edu/arizona nexthops={faceid=258 (cost=107), faceid=260 (cost=139), faceid=261 (cost=139), faceid=262 (cost=155)}
+  /ndn/pastal0 nexthops={faceid=258 (cost=97), faceid=261 (cost=132), faceid=262 (cost=156), faceid=260 (cost=165)}
+  /ndn/kr/anyang/%C1.Router/anyanghub nexthops={faceid=262 (cost=16)}
+  /ndn/jp/waseda nexthops={faceid=260 (cost=64), faceid=261 (cost=64), faceid=262 (cost=80), faceid=258 (cost=182)}
+  /ndn/distributedDB/producer nexthops={faceid=261 (cost=163), faceid=258 (cost=172), faceid=262 (cost=187), faceid=260 (cost=208)}
+  /ndn/it/unipd nexthops={faceid=261 (cost=166), faceid=258 (cost=183), faceid=262 (cost=190), faceid=260 (cost=223)}
+  /ndn/ch/unibas nexthops={faceid=261 (cost=157), faceid=262 (cost=181), faceid=258 (cost=184), faceid=260 (cost=220)}
+  /ndn/click nexthops={faceid=258 (cost=108), faceid=261 (cost=118), faceid=262 (cost=142), faceid=260 (cost=164)}
+  /ndn/com/verisign/%C1.Router/labs-ndn3 nexthops={faceid=258 (cost=120), faceid=261 (cost=162), faceid=260 (cost=174), faceid=262 (cost=186)}
+  /ndn/edu/ucla/remap/%C1.Router/cs/aleph nexthops={faceid=258 (cost=105), faceid=261 (cost=116), faceid=262 (cost=140), faceid=260 (cost=164)}
+  /ndn/NLSR/LSA nexthops={faceid=261 (cost=16), faceid=262 (cost=16), faceid=260 (cost=64), faceid=258 (cost=89)}
+  /ndn/pkuhub nexthops={faceid=261 (cost=30), faceid=262 (cost=54), faceid=260 (cost=126), faceid=258 (cost=190)}
+  /ndn/edu/uci/%C1.Router/ndnhub nexthops={faceid=258 (cost=106), faceid=261 (cost=116), faceid=262 (cost=140), faceid=260 (cost=165)}
+  /ndn/mccoy nexthops={faceid=258 (cost=89), faceid=261 (cost=131), faceid=262 (cost=155), faceid=260 (cost=157)}
+  /ndn/ndnrtr nexthops={faceid=258 (cost=118), faceid=261 (cost=142), faceid=262 (cost=166), faceid=260 (cost=177)}
+  /ndn/hobo nexthops={faceid=258 (cost=107), faceid=260 (cost=139), faceid=261 (cost=139), faceid=262 (cost=155)}
+  /ndn/edu/wustl nexthops={faceid=258 (cost=112), faceid=261 (cost=154), faceid=260 (cost=172), faceid=262 (cost=178)}
+  /ndn/systemx-ndn-1 nexthops={faceid=261 (cost=161), faceid=258 (cost=174), faceid=262 (cost=185), faceid=260 (cost=210)}
+  /ndn/broadcast/KEYS nexthops={faceid=259 (cost=0), faceid=261 (cost=16), faceid=262 (cost=16), faceid=260 (cost=64), faceid=258 (cost=89)}
+  /ndn/insula nexthops={faceid=261 (cost=166), faceid=258 (cost=187), faceid=262 (cost=190), faceid=260 (cost=223)}
+  /ndn/edu/umich/%C1.Router/ndn0 nexthops={faceid=258 (cost=104), faceid=261 (cost=146), faceid=260 (cost=168), faceid=262 (cost=170)}
+  /ndn/cn/edu/tongji nexthops={faceid=261 (cost=34), faceid=262 (cost=67), faceid=260 (cost=130), faceid=258 (cost=201)}
+  /ndn/NLSR/LSA/kr/re/kisti/%C1.Router/router3 nexthops={faceid=259 (cost=0)}
+  /ndn/bupthub nexthops={faceid=261 (cost=16), faceid=262 (cost=49), faceid=260 (cost=112), faceid=258 (cost=204)}
+  /ndn/distributedDB/producer/host nexthops={faceid=264 (cost=1)}
+  /ndn/edu/ucla/remap nexthops={faceid=258 (cost=105), faceid=261 (cost=116), faceid=262 (cost=140), faceid=260 (cost=164)}
+  /ndn/edu/arizona/%C1.Router/hobo nexthops={faceid=258 (cost=107), faceid=260 (cost=139), faceid=261 (cost=139), faceid=262 (cost=155)}
+  /localhost/nfd nexthops={faceid=1 (cost=0)}
+  /ndn/cn/edu/pku nexthops={faceid=261 (cost=30), faceid=262 (cost=54), faceid=260 (cost=126), faceid=258 (cost=190)}
+  /ndn/edu/memphis/%C1.Router/titan nexthops={faceid=258 (cost=116), faceid=260 (cost=156), faceid=261 (cost=156), faceid=262 (cost=172)}
+  /ndn/es/urjc nexthops={faceid=261 (cost=166), faceid=258 (cost=187), faceid=262 (cost=190), faceid=260 (cost=223)}
+  /ndn/cs/aleph nexthops={faceid=258 (cost=105), faceid=261 (cost=116), faceid=262 (cost=140), faceid=260 (cost=164)}
+  /ndn/cn/edu/pku/%C1.Router/pkuhub nexthops={faceid=261 (cost=30), faceid=262 (cost=54), faceid=260 (cost=126), faceid=258 (cost=190)}
+  /ndn/fr/lip6/%C1.Router/ndnhub nexthops={faceid=261 (cost=162), faceid=258 (cost=173), faceid=262 (cost=186), faceid=260 (cost=211)}
+  /ndn/edu/umich nexthops={faceid=258 (cost=104), faceid=261 (cost=146), faceid=260 (cost=168), faceid=262 (cost=170)}
+  /ndn/cn/edu/tongji/%C1.Router/cnlab nexthops={faceid=261 (cost=34), faceid=262 (cost=67), faceid=260 (cost=130), faceid=258 (cost=201)}
+  /ndn/fr/irt-systemx/%C1.Router/systemx-ndn-1 nexthops={faceid=261 (cost=161), faceid=258 (cost=174), faceid=262 (cost=185), faceid=260 (cost=210)}
+  /ndn/wundngw nexthops={faceid=258 (cost=112), faceid=261 (cost=154), faceid=260 (cost=172), faceid=262 (cost=178)}
+  /ndn/kr/anyang nexthops={faceid=262 (cost=16), faceid=261 (cost=49), faceid=260 (cost=128), faceid=258 (cost=228)}
+  /ndn/edu/byu/%C1.Router/pastal0 nexthops={faceid=258 (cost=97), faceid=261 (cost=132), faceid=262 (cost=156), faceid=260 (cost=165)}
+  /ndn/no/ntnu/%C1.Router/ndnnode nexthops={faceid=261 (cost=137), faceid=262 (cost=161), faceid=258 (cost=180), faceid=260 (cost=233)}
+  /ndn/kr/re/kisti/host nexthops={faceid=264 (cost=1)}
+  /ndn/edu/neu nexthops={faceid=258 (cost=118), faceid=261 (cost=142), faceid=262 (cost=166), faceid=260 (cost=177)}
+  /ndn/ndnhub nexthops={faceid=258 (cost=106), faceid=261 (cost=116), faceid=262 (cost=140), faceid=260 (cost=165)}
+  /localhost/nlsr nexthops={faceid=259 (cost=0)}
+  /ndn/edu/neu/%C1.Router/ndnrtr nexthops={faceid=258 (cost=118), faceid=261 (cost=142), faceid=262 (cost=166), faceid=260 (cost=177)}
+  /ndn/edu/uci nexthops={faceid=258 (cost=106), faceid=261 (cost=116), faceid=262 (cost=140), faceid=260 (cost=165)}
+  /ndn/no/ntnu nexthops={faceid=261 (cost=137), faceid=262 (cost=161), faceid=258 (cost=180), faceid=260 (cost=233)}
+  /ndn/cn/edu/bupt nexthops={faceid=261 (cost=16), faceid=262 (cost=49), faceid=260 (cost=112), faceid=258 (cost=204)}
+  /ndn/titan nexthops={faceid=258 (cost=116), faceid=260 (cost=156), faceid=261 (cost=156), faceid=262 (cost=172)}
+  /ndn/kr/re/kisti/%C1.Router/router3 nexthops={faceid=259 (cost=0)}
+  /ndn/anyanghub nexthops={faceid=262 (cost=16), faceid=261 (cost=49), faceid=260 (cost=128), faceid=258 (cost=228)}
+  /ndn/edu/byu nexthops={faceid=258 (cost=97), faceid=261 (cost=132), faceid=262 (cost=156), faceid=260 (cost=165)}
+RIB:
+  /localhost/nlsr route={faceid=259 (origin=0 cost=0 ChildInherit)}
+  /localhost/nfd/rib route={faceid=257 (origin=0 cost=0 ChildInherit)}
+  /ndn/cs-ndn-testbed1 route={faceid=258 (origin=128 cost=184 expires=1119s RibCapture), faceid=261 (origin=128 cost=157 expires=1119s RibCapture), faceid=262 (origin=128 cost=181 expires=1119s RibCapture), faceid=260 (origin=128 cost=220 expires=1119s RibCapture)}
+  /ndn/systemx-ndn-1 route={faceid=258 (origin=128 cost=174 expires=1120s RibCapture), faceid=261 (origin=128 cost=161 expires=1120s RibCapture), faceid=262 (origin=128 cost=185 expires=1120s RibCapture), faceid=260 (origin=128 cost=210 expires=1120s RibCapture)}
+  /ndn/distributedDB/producer/host route={faceid=264 (origin=255 cost=1 ChildInherit)}
+  /ndn/distributedDB/producer route={faceid=258 (origin=128 cost=172 expires=1120s RibCapture), faceid=261 (origin=128 cost=163 expires=1120s RibCapture), faceid=262 (origin=128 cost=187 expires=1120s RibCapture), faceid=260 (origin=128 cost=208 expires=1120s RibCapture)}
+  /ndn/orange-ndn-1 route={faceid=258 (origin=128 cost=172 expires=1120s RibCapture), faceid=261 (origin=128 cost=163 expires=1120s RibCapture), faceid=262 (origin=128 cost=187 expires=1120s RibCapture), faceid=260 (origin=128 cost=208 expires=1120s RibCapture)}
+  /ndn/labs-ndn3 route={faceid=258 (origin=128 cost=120 expires=1120s RibCapture), faceid=261 (origin=128 cost=162 expires=1120s RibCapture), faceid=262 (origin=128 cost=186 expires=1120s RibCapture), faceid=260 (origin=128 cost=174 expires=1120s RibCapture)}
+  /ndn/broadcast/KEYS route={faceid=259 (origin=0 cost=0 RibCapture), faceid=260 (origin=128 cost=64 RibCapture), faceid=261 (origin=128 cost=16 RibCapture), faceid=262 (origin=128 cost=16 RibCapture), faceid=258 (origin=128 cost=89 RibCapture)}
+  /ndn/anyanghub route={faceid=262 (origin=128 cost=16 expires=1120s RibCapture), faceid=261 (origin=128 cost=49 expires=1120s RibCapture), faceid=258 (origin=128 cost=228 expires=1120s RibCapture), faceid=260 (origin=128 cost=128 expires=1120s RibCapture)}
+  /ndn/wundngw route={faceid=258 (origin=128 cost=112 expires=1120s RibCapture), faceid=261 (origin=128 cost=154 expires=1120s RibCapture), faceid=262 (origin=128 cost=178 expires=1120s RibCapture), faceid=260 (origin=128 cost=172 expires=1120s RibCapture)}
+  /ndn/pastal0 route={faceid=258 (origin=128 cost=97 expires=1120s RibCapture), faceid=261 (origin=128 cost=132 expires=1120s RibCapture), faceid=262 (origin=128 cost=156 expires=1120s RibCapture), faceid=260 (origin=128 cost=165 expires=1120s RibCapture)}
+  /ndn/parklab route={faceid=260 (origin=128 cost=64 expires=1120s RibCapture), faceid=261 (origin=128 cost=64 expires=1120s RibCapture), faceid=262 (origin=128 cost=80 expires=1120s RibCapture), faceid=258 (origin=128 cost=182 expires=1120s RibCapture)}
+  /ndn/ndnnode route={faceid=258 (origin=128 cost=180 expires=1120s RibCapture), faceid=261 (origin=128 cost=137 expires=1120s RibCapture), faceid=262 (origin=128 cost=161 expires=1120s RibCapture), faceid=260 (origin=128 cost=223 expires=1120s RibCapture)}
+  /ndn/bupthub route={faceid=261 (origin=128 cost=16 expires=1120s RibCapture), faceid=262 (origin=128 cost=49 expires=1120s RibCapture), faceid=258 (origin=128 cost=204 expires=1120s RibCapture), faceid=260 (origin=128 cost=112 expires=1120s RibCapture)}
+  /ndn/pkuhub route={faceid=261 (origin=128 cost=30 expires=1120s RibCapture), faceid=262 (origin=128 cost=54 expires=1120s RibCapture), faceid=260 (origin=128 cost=126 expires=1120s RibCapture), faceid=258 (origin=128 cost=190 expires=1120s RibCapture)}
+  /ndn/ndnrtr route={faceid=258 (origin=128 cost=118 expires=1120s RibCapture), faceid=261 (origin=128 cost=142 expires=1120s RibCapture), faceid=262 (origin=128 cost=166 expires=1120s RibCapture), faceid=260 (origin=128 cost=177 expires=1120s RibCapture)}
+  /ndn/ndnhub route={faceid=258 (origin=128 cost=106 expires=1120s RibCapture), faceid=261 (origin=128 cost=116 expires=1120s RibCapture), faceid=262 (origin=128 cost=140 expires=1120s RibCapture), faceid=260 (origin=128 cost=165 expires=1120s RibCapture)}
+  /ndn/insula route={faceid=258 (origin=128 cost=187 expires=1120s RibCapture), faceid=261 (origin=128 cost=166 expires=1120s RibCapture), faceid=262 (origin=128 cost=190 expires=1120s RibCapture), faceid=260 (origin=128 cost=223 expires=1120s RibCapture)}
+  /ndn/titan route={faceid=258 (origin=128 cost=116 expires=1120s RibCapture), faceid=261 (origin=128 cost=156 expires=1120s RibCapture), faceid=262 (origin=128 cost=172 expires=1120s RibCapture), faceid=260 (origin=128 cost=156 expires=1120s RibCapture)}
+  /ndn/mccoy route={faceid=258 (origin=128 cost=89 expires=1120s RibCapture), faceid=261 (origin=128 cost=131 expires=1120s RibCapture), faceid=262 (origin=128 cost=155 expires=1120s RibCapture), faceid=260 (origin=128 cost=157 expires=1120s RibCapture)}
+  /ndn/cnlab route={faceid=261 (origin=128 cost=34 expires=1120s RibCapture), faceid=262 (origin=128 cost=67 expires=1120s RibCapture), faceid=258 (origin=128 cost=201 expires=1120s RibCapture), faceid=260 (origin=128 cost=130 expires=1120s RibCapture)}
+  /ndn/click route={faceid=258 (origin=128 cost=108 expires=1120s RibCapture), faceid=261 (origin=128 cost=118 expires=1120s RibCapture), faceid=262 (origin=128 cost=142 expires=1120s RibCapture), faceid=260 (origin=128 cost=164 expires=1120s RibCapture)}
+  /ndn/ndnx route={faceid=258 (origin=128 cost=103 expires=1120s RibCapture), faceid=261 (origin=128 cost=145 expires=1120s RibCapture), faceid=262 (origin=128 cost=169 expires=1120s RibCapture), faceid=260 (origin=128 cost=171 expires=1120s RibCapture)}
+  /ndn/ndn0 route={faceid=258 (origin=128 cost=104 expires=1120s RibCapture), faceid=261 (origin=128 cost=146 expires=1120s RibCapture), faceid=262 (origin=128 cost=170 expires=1120s RibCapture), faceid=260 (origin=128 cost=168 expires=1120s RibCapture)}
+  /ndn/hobo route={faceid=258 (origin=128 cost=107 expires=1120s RibCapture), faceid=261 (origin=128 cost=139 expires=1120s RibCapture), faceid=262 (origin=128 cost=155 expires=1120s RibCapture), faceid=260 (origin=128 cost=139 expires=1120s RibCapture)}
+  /ndn/NLSR/sync route={faceid=259 (origin=0 cost=0 ChildInherit), faceid=260 (origin=128 cost=64 RibCapture), faceid=261 (origin=128 cost=16 RibCapture), faceid=262 (origin=128 cost=16 RibCapture), faceid=258 (origin=128 cost=89 RibCapture)}
+  /ndn/NLSR/LSA/kr/re/kisti/%C1.Router/router3 route={faceid=259 (origin=0 cost=0 RibCapture)}
+  /ndn/NLSR/LSA route={faceid=260 (origin=128 cost=64 RibCapture), faceid=261 (origin=128 cost=16 RibCapture), faceid=262 (origin=128 cost=16 RibCapture), faceid=258 (origin=128 cost=89 RibCapture)}
+  /ndn/org/caida/%C1.Router/click route={faceid=258 (origin=128 cost=108 expires=1120s RibCapture), faceid=261 (origin=128 cost=118 expires=1120s RibCapture), faceid=262 (origin=128 cost=142 expires=1120s RibCapture), faceid=260 (origin=128 cost=164 expires=1120s RibCapture)}
+  /ndn/org/caida route={faceid=258 (origin=128 cost=108 expires=1120s RibCapture), faceid=261 (origin=128 cost=118 expires=1120s RibCapture), faceid=262 (origin=128 cost=142 expires=1120s RibCapture), faceid=260 (origin=128 cost=164 expires=1120s RibCapture)}
+  /ndn/edu/colostate/%C1.Router/mccoy route={faceid=258 (origin=128 cost=89 RibCapture)}
+  /ndn/edu/colostate route={faceid=258 (origin=128 cost=89 expires=1120s RibCapture), faceid=261 (origin=128 cost=131 expires=1120s RibCapture), faceid=262 (origin=128 cost=155 expires=1120s RibCapture), faceid=260 (origin=128 cost=157 expires=1120s RibCapture)}
+  /ndn/edu/illinois/%C1.Router/ndnx route={faceid=258 (origin=128 cost=103 expires=1120s RibCapture), faceid=261 (origin=128 cost=145 expires=1120s RibCapture), faceid=262 (origin=128 cost=169 expires=1120s RibCapture), faceid=260 (origin=128 cost=171 expires=1120s RibCapture)}
+  /ndn/edu/illinois route={faceid=258 (origin=128 cost=103 expires=1120s RibCapture), faceid=261 (origin=128 cost=145 expires=1120s RibCapture), faceid=262 (origin=128 cost=169 expires=1120s RibCapture), faceid=260 (origin=128 cost=171 expires=1120s RibCapture)}
+  /ndn/edu/memphis/%C1.Router/titan route={faceid=258 (origin=128 cost=116 expires=1120s RibCapture), faceid=261 (origin=128 cost=156 expires=1120s RibCapture), faceid=262 (origin=128 cost=172 expires=1120s RibCapture), faceid=260 (origin=128 cost=156 expires=1120s RibCapture)}
+  /ndn/edu/memphis route={faceid=258 (origin=128 cost=116 expires=1120s RibCapture), faceid=261 (origin=128 cost=156 expires=1120s RibCapture), faceid=262 (origin=128 cost=172 expires=1120s RibCapture), faceid=260 (origin=128 cost=156 expires=1120s RibCapture)}
+  /ndn/edu/arizona/%C1.Router/hobo route={faceid=258 (origin=128 cost=107 expires=1120s RibCapture), faceid=261 (origin=128 cost=139 expires=1120s RibCapture), faceid=262 (origin=128 cost=155 expires=1120s RibCapture), faceid=260 (origin=128 cost=139 expires=1120s RibCapture)}
+  /ndn/edu/arizona route={faceid=258 (origin=128 cost=107 expires=1120s RibCapture), faceid=261 (origin=128 cost=139 expires=1120s RibCapture), faceid=262 (origin=128 cost=155 expires=1120s RibCapture), faceid=260 (origin=128 cost=139 expires=1120s RibCapture)}
+  /ndn/edu/wustl/%C1.Router/wundngw route={faceid=258 (origin=128 cost=112 expires=1120s RibCapture), faceid=261 (origin=128 cost=154 expires=1120s RibCapture), faceid=262 (origin=128 cost=178 expires=1120s RibCapture), faceid=260 (origin=128 cost=172 expires=1120s RibCapture)}
+  /ndn/edu/wustl route={faceid=258 (origin=128 cost=112 expires=1120s RibCapture), faceid=261 (origin=128 cost=154 expires=1120s RibCapture), faceid=262 (origin=128 cost=178 expires=1120s RibCapture), faceid=260 (origin=128 cost=172 expires=1120s RibCapture)}
+  /ndn/edu/umich/%C1.Router/ndn0 route={faceid=258 (origin=128 cost=104 expires=1120s RibCapture), faceid=261 (origin=128 cost=146 expires=1120s RibCapture), faceid=262 (origin=128 cost=170 expires=1120s RibCapture), faceid=260 (origin=128 cost=168 expires=1120s RibCapture)}
+  /ndn/edu/umich route={faceid=258 (origin=128 cost=104 expires=1120s RibCapture), faceid=261 (origin=128 cost=146 expires=1120s RibCapture), faceid=262 (origin=128 cost=170 expires=1120s RibCapture), faceid=260 (origin=128 cost=168 expires=1120s RibCapture)}
+  /ndn/edu/ucla/%C1.Router/cs/spurs route={faceid=258 (origin=128 cost=105 expires=1120s RibCapture), faceid=261 (origin=128 cost=115 expires=1120s RibCapture), faceid=262 (origin=128 cost=139 expires=1120s RibCapture), faceid=260 (origin=128 cost=165 expires=1120s RibCapture)}
+  /ndn/edu/ucla/remap/%C1.Router/cs/aleph route={faceid=258 (origin=128 cost=105 expires=1120s RibCapture), faceid=261 (origin=128 cost=116 expires=1120s RibCapture), faceid=262 (origin=128 cost=140 expires=1120s RibCapture), faceid=260 (origin=128 cost=164 expires=1120s RibCapture)}
+  /ndn/edu/ucla/remap route={faceid=258 (origin=128 cost=105 expires=1120s RibCapture), faceid=261 (origin=128 cost=116 expires=1120s RibCapture), faceid=262 (origin=128 cost=140 expires=1120s RibCapture), faceid=260 (origin=128 cost=164 expires=1120s RibCapture)}
+  /ndn/edu/ucla route={faceid=258 (origin=128 cost=105 expires=1120s RibCapture), faceid=261 (origin=128 cost=115 expires=1120s RibCapture), faceid=262 (origin=128 cost=139 expires=1120s RibCapture), faceid=260 (origin=128 cost=165 expires=1120s RibCapture)}
+  /ndn/edu/uci/%C1.Router/ndnhub route={faceid=258 (origin=128 cost=106 expires=1120s RibCapture), faceid=261 (origin=128 cost=116 expires=1120s RibCapture), faceid=262 (origin=128 cost=140 expires=1120s RibCapture), faceid=260 (origin=128 cost=165 expires=1120s RibCapture)}
+  /ndn/edu/uci route={faceid=258 (origin=128 cost=106 expires=1120s RibCapture), faceid=261 (origin=128 cost=116 expires=1120s RibCapture), faceid=262 (origin=128 cost=140 expires=1120s RibCapture), faceid=260 (origin=128 cost=165 expires=1120s RibCapture)}
+  /ndn/edu/neu/%C1.Router/ndnrtr route={faceid=258 (origin=128 cost=118 expires=1120s RibCapture), faceid=261 (origin=128 cost=142 expires=1120s RibCapture), faceid=262 (origin=128 cost=166 expires=1120s RibCapture), faceid=260 (origin=128 cost=177 expires=1120s RibCapture)}
+  /ndn/edu/neu route={faceid=258 (origin=128 cost=118 expires=1120s RibCapture), faceid=261 (origin=128 cost=142 expires=1120s RibCapture), faceid=262 (origin=128 cost=166 expires=1120s RibCapture), faceid=260 (origin=128 cost=177 expires=1120s RibCapture)}
+  /ndn/edu/byu/%C1.Router/pastal0 route={faceid=258 (origin=128 cost=97 expires=1120s RibCapture), faceid=261 (origin=128 cost=132 expires=1120s RibCapture), faceid=262 (origin=128 cost=156 expires=1120s RibCapture), faceid=260 (origin=128 cost=165 expires=1120s RibCapture)}
+  /ndn/edu/byu route={faceid=258 (origin=128 cost=97 expires=1120s RibCapture), faceid=261 (origin=128 cost=132 expires=1120s RibCapture), faceid=262 (origin=128 cost=156 expires=1120s RibCapture), faceid=260 (origin=128 cost=165 expires=1120s RibCapture)}
+  /ndn/com/verisign/%C1.Router/labs-ndn3 route={faceid=258 (origin=128 cost=120 expires=1119s RibCapture), faceid=261 (origin=128 cost=162 expires=1119s RibCapture), faceid=262 (origin=128 cost=186 expires=1119s RibCapture), faceid=260 (origin=128 cost=174 expires=1119s RibCapture)}
+  /ndn/com/verisign route={faceid=258 (origin=128 cost=120 expires=1119s RibCapture), faceid=261 (origin=128 cost=162 expires=1119s RibCapture), faceid=262 (origin=128 cost=186 expires=1120s RibCapture), faceid=260 (origin=128 cost=174 expires=1120s RibCapture)}
+  /ndn/com/orange1/%C1.Router/orange-ndn-1 route={faceid=258 (origin=128 cost=172 expires=1120s RibCapture), faceid=261 (origin=128 cost=163 expires=1120s RibCapture), faceid=262 (origin=128 cost=187 expires=1120s RibCapture), faceid=260 (origin=128 cost=208 expires=1120s RibCapture)}
+  /ndn/com/orange1 route={faceid=258 (origin=128 cost=172 expires=1120s RibCapture), faceid=261 (origin=128 cost=163 expires=1120s RibCapture), faceid=262 (origin=128 cost=187 expires=1120s RibCapture), faceid=260 (origin=128 cost=208 expires=1120s RibCapture)}
+  /ndn/no/ntnu/%C1.Router/ndnnode route={faceid=258 (origin=128 cost=180 expires=1120s RibCapture), faceid=261 (origin=128 cost=137 expires=1120s RibCapture), faceid=262 (origin=128 cost=161 expires=1120s RibCapture), faceid=260 (origin=128 cost=233 expires=1120s RibCapture)}
+  /ndn/no/ntnu route={faceid=258 (origin=128 cost=180 expires=1120s RibCapture), faceid=261 (origin=128 cost=137 expires=1120s RibCapture), faceid=262 (origin=128 cost=161 expires=1120s RibCapture), faceid=260 (origin=128 cost=233 expires=1120s RibCapture)}
+  /ndn/kr/anyang/%C1.Router/anyanghub route={faceid=262 (origin=128 cost=16 RibCapture)}
+  /ndn/kr/anyang route={faceid=262 (origin=128 cost=16 expires=1120s RibCapture), faceid=261 (origin=128 cost=49 expires=1120s RibCapture), faceid=258 (origin=128 cost=228 expires=1120s RibCapture), faceid=260 (origin=128 cost=128 expires=1120s RibCapture)}
+  /ndn/kr/re/kisti/%C1.Router/router3 route={faceid=259 (origin=0 cost=0 RibCapture)}
+  /ndn/kr/re/kisti/host route={faceid=264 (origin=255 cost=1 ChildInherit)}
+  /ndn/jp/waseda/%C1.Router/parklab route={faceid=260 (origin=128 cost=64 RibCapture)}
+  /ndn/jp/waseda route={faceid=260 (origin=128 cost=64 expires=1120s RibCapture), faceid=261 (origin=128 cost=64 expires=1120s RibCapture), faceid=262 (origin=128 cost=80 expires=1120s RibCapture), faceid=258 (origin=128 cost=182 expires=1120s RibCapture)}
+  /ndn/it/unipd/%C1.Router/ndnnode route={faceid=258 (origin=128 cost=183 expires=1120s RibCapture), faceid=261 (origin=128 cost=166 expires=1120s RibCapture), faceid=262 (origin=128 cost=190 expires=1120s RibCapture), faceid=260 (origin=128 cost=223 expires=1120s RibCapture)}
+  /ndn/it/unipd route={faceid=258 (origin=128 cost=183 expires=1120s RibCapture), faceid=261 (origin=128 cost=166 expires=1120s RibCapture), faceid=262 (origin=128 cost=190 expires=1120s RibCapture), faceid=260 (origin=128 cost=223 expires=1120s RibCapture)}
+  /ndn/fr/irt-systemx/%C1.Router/systemx-ndn-1 route={faceid=258 (origin=128 cost=174 expires=1120s RibCapture), faceid=261 (origin=128 cost=161 expires=1120s RibCapture), faceid=262 (origin=128 cost=185 expires=1120s RibCapture), faceid=260 (origin=128 cost=210 expires=1120s RibCapture)}
+  /ndn/fr/irt-systemx route={faceid=258 (origin=128 cost=174 expires=1120s RibCapture), faceid=261 (origin=128 cost=161 expires=1120s RibCapture), faceid=262 (origin=128 cost=185 expires=1120s RibCapture), faceid=260 (origin=128 cost=210 expires=1120s RibCapture)}
+  /ndn/fr/lip6/%C1.Router/ndnhub route={faceid=258 (origin=128 cost=173 expires=1120s RibCapture), faceid=261 (origin=128 cost=162 expires=1120s RibCapture), faceid=262 (origin=128 cost=186 expires=1120s RibCapture), faceid=260 (origin=128 cost=211 expires=1120s RibCapture)}
+  /ndn/fr/lip6 route={faceid=258 (origin=128 cost=173 expires=1120s RibCapture), faceid=261 (origin=128 cost=162 expires=1120s RibCapture), faceid=262 (origin=128 cost=186 expires=1120s RibCapture), faceid=260 (origin=128 cost=211 expires=1120s RibCapture)}
+  /ndn/es/urjc/%C1.Router/insula route={faceid=258 (origin=128 cost=187 expires=1120s RibCapture), faceid=261 (origin=128 cost=166 expires=1120s RibCapture), faceid=262 (origin=128 cost=190 expires=1120s RibCapture), faceid=260 (origin=128 cost=223 expires=1120s RibCapture)}
+  /ndn/es/urjc route={faceid=258 (origin=128 cost=187 expires=1120s RibCapture), faceid=261 (origin=128 cost=166 expires=1120s RibCapture), faceid=262 (origin=128 cost=190 expires=1120s RibCapture), faceid=260 (origin=128 cost=223 expires=1120s RibCapture)}
+  /ndn/cs/spurs route={faceid=258 (origin=128 cost=105 expires=1120s RibCapture), faceid=261 (origin=128 cost=115 expires=1120s RibCapture), faceid=262 (origin=128 cost=139 expires=1120s RibCapture), faceid=260 (origin=128 cost=165 expires=1120s RibCapture)}
+  /ndn/cs/aleph route={faceid=258 (origin=128 cost=105 expires=1120s RibCapture), faceid=261 (origin=128 cost=116 expires=1120s RibCapture), faceid=262 (origin=128 cost=140 expires=1120s RibCapture), faceid=260 (origin=128 cost=164 expires=1120s RibCapture)}
+  /ndn/cn/edu/tongji/%C1.Router/cnlab route={faceid=261 (origin=128 cost=34 expires=1120s RibCapture), faceid=262 (origin=128 cost=67 expires=1120s RibCapture), faceid=258 (origin=128 cost=201 expires=1120s RibCapture), faceid=260 (origin=128 cost=130 expires=1120s RibCapture)}
+  /ndn/cn/edu/tongji route={faceid=261 (origin=128 cost=34 expires=1120s RibCapture), faceid=262 (origin=128 cost=67 expires=1120s RibCapture), faceid=258 (origin=128 cost=201 expires=1120s RibCapture), faceid=260 (origin=128 cost=130 expires=1120s RibCapture)}
+  /ndn/cn/edu/bupt/%C1.Router/bupthub route={faceid=261 (origin=128 cost=16 RibCapture)}
+  /ndn/cn/edu/bupt route={faceid=261 (origin=128 cost=16 expires=1120s RibCapture), faceid=262 (origin=128 cost=49 expires=1120s RibCapture), faceid=258 (origin=128 cost=204 expires=1120s RibCapture), faceid=260 (origin=128 cost=112 expires=1120s RibCapture)}
+  /ndn/cn/edu/pku/%C1.Router/pkuhub route={faceid=261 (origin=128 cost=30 expires=1120s RibCapture), faceid=262 (origin=128 cost=54 expires=1120s RibCapture), faceid=260 (origin=128 cost=126 expires=1120s RibCapture), faceid=258 (origin=128 cost=190 expires=1120s RibCapture)}
+  /ndn/cn/edu/pku route={faceid=261 (origin=128 cost=30 expires=1120s RibCapture), faceid=262 (origin=128 cost=54 expires=1120s RibCapture), faceid=260 (origin=128 cost=126 expires=1120s RibCapture), faceid=258 (origin=128 cost=190 expires=1120s RibCapture)}
+  /ndn/ch/unibas/%C1.Router/cs-ndn-testbed1 route={faceid=258 (origin=128 cost=184 expires=1119s RibCapture), faceid=261 (origin=128 cost=157 expires=1118s RibCapture), faceid=262 (origin=128 cost=181 expires=1119s RibCapture), faceid=260 (origin=128 cost=220 expires=1119s RibCapture)}
+  /ndn/ch/unibas route={faceid=258 (origin=128 cost=184 expires=1119s RibCapture), faceid=261 (origin=128 cost=157 expires=1119s RibCapture), faceid=262 (origin=128 cost=181 expires=1119s RibCapture), faceid=260 (origin=128 cost=220 expires=1119s RibCapture)}
+Strategy choices:
+  / strategy=/localhost/nfd/strategy/best-route/%FD%04
+  /ndn/NLSR/sync strategy=/localhost/nfd/strategy/multicast/%FD%01
+  /ndn/distributedDB/producer strategy=/localhost/nfd/strategy/best-route/%FD%04
+  /ndn/NLSR/LSA strategy=/localhost/nfd/strategy/multicast/%FD%01
+  /ndn/broadcast/KEYS strategy=/localhost/nfd/strategy/multicast/%FD%01

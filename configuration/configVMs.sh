@@ -11,5 +11,5 @@ do
   ROUTER_IP=${pair_info[4]}
 
   sshpass -e ssh -t ${!HOST} "nfdc create udp4://$ROUTER_IP:6363
-                              nfdc add-nexthop -c 1 / udp4://$ROUTER_IP:6363" 
+                              nfdc register -c 1 / udp4://$ROUTER_IP:6363" 
 done

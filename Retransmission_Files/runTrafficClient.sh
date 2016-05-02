@@ -1,18 +1,18 @@
 #!/bin/bash
 
-if [ $# -ne 2 ]
+if [ $# -ne 3 ]
 then
-  echo "Usage: $0 <VM password> <retrasmissionFlag>"
+  echo "Usage: $0 <VM password> <conf file> <retrasmissionFlag>"
   exit 0
 fi
 
 source ~/.topology
 
-if [ "$2" == "y" ]; then
+if [ "$3" == "y" ]; then
   echo "set retransmission flag TRUE" 
-  sshpass -p$1 ssh $VMsmall29 "ndn-traffic -i 20 -r NDN_Traffic_Client_KISTI >& ndn-traffic.log"
+  sshpass -p$1 ssh $VMsmall29 "ndn-traffic -i 20 -r $2 >& ndn-traffic.log"
 else
   echo "set retransmission flag FALSE"
-  sshpass -p$1 ssh $VMsmall29 "ndn-traffic -i 20 NDN_Traffic_Client_KISTI >& ndn-traffic.log"
+  sshpass -p$1 ssh $VMsmall29 "ndn-traffic -i 20 $2 >& ndn-traffic.log"
 fi
 

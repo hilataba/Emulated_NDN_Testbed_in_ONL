@@ -20,5 +20,5 @@ do
  
   ssh ${!ROUTER} "source ~/.topology ;
                   nfdc create udp4://$HOSTIP:6363 ;
-                  nfdc add-nexthop -c 1 /$PREFIX/ udp4://$HOSTIP:6363" 
+                  nfdc register -c 1 /$PREFIX/ udp4://$HOSTIP:6363" 
 done

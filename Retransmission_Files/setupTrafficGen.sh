@@ -10,5 +10,5 @@ source ~/.topology
 
 while read vm; do
 	echo "${!vm}"
-	sshpass -p$1 scp NDN_Traffic_Client_KISTI NDN_Traffic_Server_KISTI ${!vm}:~/
+	sshpass -p$1 scp NDN_Traffic_Client_Distributed NDN_Traffic_Server_Distributed NDN_Traffic_Client_KISTI NDN_Traffic_Server_KISTI ${!vm}:~/
 done <vmtargets.txt

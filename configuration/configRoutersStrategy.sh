@@ -4,8 +4,8 @@ CWD=`pwd`
 source ~/.topology
 source hosts
 
-if (( $# != 1 )); then
-  echo "usage: ./configRoutersStrategy.sh <strategyName>"
+if (( $# != 2 )); then
+  echo "usage: ./configRoutersStrategy.sh <strategyName> <name>"
   exit
 fi
 
@@ -38,7 +38,9 @@ else
   strategy='/localhost/nfd/strategy/broadcast'
 fi
 
+
 NAMESPACE="/ndn/kr/re/kisti/host"
+NAMESPACE=$2
 STRATEGY=$strategy
 
 # ROUTER_HOST_PAIRS contains 'tuples' of

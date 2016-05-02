@@ -1,0 +1,19 @@
+Environment Variable NDN_TRAFFIC_LOGFOLDER Not Set.
+Using Default Output For Logging.
+2016-May-02 00:07:11 - Analyzing Traffic Configuration File: NDN_Traffic_Server_Distributed
+2016-May-02 00:07:11 - Traffic Configuration File Processing Completed
+
+Traffic Pattern Type #1
+Name=/ndn/distributedDB/producer/host, ContentType=1, FreshnessPeriod=5000, ContentBytes=1000, SigningInfo=
+
+
+
+== Interest Traffic Report ==
+
+Total Traffic Pattern Types = 1
+Total Interests Received    = 0
+
+Traffic Pattern Type #1
+Name=/ndn/distributedDB/producer/host, ContentType=1, FreshnessPeriod=5000, ContentBytes=1000, SigningInfo=
+Total Interests Received    = 0
+

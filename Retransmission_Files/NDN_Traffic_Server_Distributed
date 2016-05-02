@@ -1,0 +1,4 @@
+Name=/ndn/distributedDB/producer/host
+ContentType=1
+ContentBytes=1000
+FreshnessPeriod=5000
